@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "92859262882",
+    "firebase_url": "https://medapp-f6c1a.firebaseio.com",
+    "project_id": "medapp-f6c1a",
+    "storage_bucket": "medapp-f6c1a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:92859262882:android:e1e1422d891f4f39",
+        "android_client_info": {
+          "package_name": "com.agatevure.medicationmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "92859262882-3a8f1otvuqomsbq89l17gkr4g91vbl76.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.agatevure.medicationmanager",
+            "certificate_hash": "e787485973507b85e6fb92d89d73bbbb5372fae5"
+          }
+        },
+        {
+          "client_id": "92859262882-r194ptrfkeo3pnsuh7uv3bvsfph63k0n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAg4pZyQK0ADVQCkggoi6tQYYm1phRplwk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "92859262882-r194ptrfkeo3pnsuh7uv3bvsfph63k0n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
