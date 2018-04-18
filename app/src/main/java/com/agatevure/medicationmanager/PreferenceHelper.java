@@ -3,9 +3,7 @@ package com.agatevure.medicationmanager;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-/**
- * Created by Gconsult on 4/11/2018.
- */
+
 
 public class PreferenceHelper {
 

@@ -8,9 +8,6 @@ import android.util.Log;
 
 
 
-/**
- * Created by deepmetha on 8/30/16.
- */
 public class AlarmRecever extends BroadcastReceiver{
     @Override
     public void onReceive(Context context, Intent intent) {

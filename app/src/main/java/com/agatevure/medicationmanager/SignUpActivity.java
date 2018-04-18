@@ -28,6 +28,7 @@ public class SignUpActivity extends AppCompatActivity {
     private TextView loginError;
 
     private FirebaseAuth mAuth;
+    private Button btnReset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +61,15 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
-        final Button loginButton = (Button)findViewById(R.id.login_button);
+        btnReset = (Button) findViewById(R.id.btn_reset_password);
+        btnReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SignUpActivity.this, ResetPasswordActivity.class));
+            }
+        });
+
+        final Button loginButton = (Button)findViewById(R.id.register);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

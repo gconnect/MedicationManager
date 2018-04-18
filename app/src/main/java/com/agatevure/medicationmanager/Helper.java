@@ -3,9 +3,6 @@ package com.agatevure.medicationmanager;
 import android.content.Context;
 import android.widget.Toast;
 
-/**
- * Created by Gconsult on 4/9/2018.
- */
 
 public class Helper {
     public static final String NAME = "Name";

@@ -6,8 +6,10 @@ import android.app.Dialog;
 import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -17,6 +19,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -36,6 +39,7 @@ import android.widget.Toast;
 
 import com.agatevure.medicationmanager.activity.AlarmRecever;
 import com.agatevure.medicationmanager.activity.MainActivity;
+import com.agatevure.medicationmanager.activity.SplashActivity;
 import com.agatevure.medicationmanager.adapters.ToDoListAdapter;
 import com.agatevure.medicationmanager.modal.ToDoData;
 import com.agatevure.medicationmanager.sqlite.SqliteHelper;
@@ -133,6 +137,7 @@ public class ProfileActivity extends AppCompatActivity
                 // Start date
                 startdate = (EditText) dialog.findViewById(R.id.startDate1);
                 enddate = (EditText) dialog.findViewById(R.id.endDate1) ;
+
                 // perform click event on edit text
                 startdate.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -289,8 +294,8 @@ public class ProfileActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.action_about) {
+            startActivity(new Intent(this, AboutActivity.class));
         }
         if (id == R.id.action_logout) {
             FirebaseAuth.getInstance().signOut();
@@ -308,18 +313,38 @@ public class ProfileActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
+        if (id == R.id.nav_home) {
+            // Handle the About action
+            startActivity(new Intent(this, ProfileActivity.class));
+        } else if (id == R.id.nav_profile) {
+            startActivity(new Intent(this, EditProfileActivity2.class));
 
         } else if (id == R.id.nav_share) {
+            //handles the share action
+            Intent shareIntent = new Intent();
+            shareIntent.setAction(Intent.ACTION_SEND);
+            shareIntent.setType("text/plain");
+            shareIntent.putExtra(Intent.EXTRA_TEXT, " " + " \nHelp you manage your medications " +
+                    "\nhttps://github.com/gconnect/MedicationManager");
+            startActivity(Intent.createChooser(shareIntent, " Medication Manager"
+            ));
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_feedback) {
 
+            Intent intent = new Intent(Intent.ACTION_SENDTO);
+            intent.setData(Uri.parse("mailto:gconnectng@gmail.com"));//only email
+            intent.putExtra(Intent.EXTRA_SUBJECT, "");
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                startActivity(intent);
+            }
+        }else if (id == R.id.nav_exit) {
+                //handles the exit action
+                new AlertDialog.Builder(ProfileActivity.this).setTitle("Exit!").setMessage
+                        ("Are you sure you want to close?").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        ProfileActivity.this.finish();
+                    }
+                }).setNegativeButton("No", null).show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

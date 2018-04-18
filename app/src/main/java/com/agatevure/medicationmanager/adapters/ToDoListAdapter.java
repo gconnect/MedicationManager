@@ -34,9 +34,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by deepmetha on 8/28/16.
- */
+
 public class ToDoListAdapter extends RecyclerView.Adapter<ToDoListAdapter.ToDoListViewHolder> {
     List<ToDoData> ToDoDataArrayList = new ArrayList<ToDoData>();
     Context context;
