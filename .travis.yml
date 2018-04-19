@@ -1,1 +1,21 @@
-language: java
+language: android
+jdk: oraclejdk9.0.1
+
+android:
+  components:
+  - tools
+  - platform-tools
+  - extra-android-m2repository
+  - build-tools-26.1.0
+  - android-26
+
+before_install:
+  - yes | sdkmanager "platforms;android-26"
+  - openssl aes-256-cbc -d -k $SECRET_FILES_KEY -in release.jks.enc -out release.jks
+  - openssl aes-256-cbc -d -k $SECRET_FILES_KEY -in keys.json.enc -out keys.json
+
+script:
+  - ./gradlew clean build assembleRelease
+
+after_success:
+  - ./gradlew publishApkRelease
