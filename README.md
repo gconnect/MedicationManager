@@ -24,3 +24,20 @@ It makes use of notification service which serves as a reminder to the user. The
  # Want to contribute?
   This application is an assessment from the Andela Learning Community in completion of the Udacity course on developing android apps.
   The application is open for contribution to help enhance the features of the app. So contributions are welcome.
+  
+ # Screenshots of the App
+ 
+ ![figma ui](https://github.com/gconnect/MedicationManager/blob/master/figma_UI_design.jpg)
+
+![sign up](https://github.com/gconnect/MedicationManager/blob/master/signup-screen.png)
+
+![login](https://github.com/gconnect/MedicationManager/blob/master/login-screen.png)
+
+![forget password](https://github.com/gconnect/MedicationManager/blob/master/forget-passwordScreen.png)
+
+![nav bar](https://github.com/gconnect/MedicationManager/blob/master/nav-bar.png)
+
+![Add medication](https://github.com/gconnect/MedicationManager/blob/master/add-medication.png)
+
+![View all medication](https://github.com/gconnect/MedicationManager/blob/master/List_all_medications.png)
+
