@@ -23,7 +23,10 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -64,6 +67,7 @@ public class ProfileActivity extends AppCompatActivity
     SqliteHelper mysqlite;
     SwipeRefreshLayout swipeRefreshLayout;
 
+    SearchView search;
     EditText startdate;
     EditText  enddate;
     DatePickerDialog datePickerDialog;
@@ -99,6 +103,7 @@ public class ProfileActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view_s);
+//        search = (SearchView) findViewById(R.id.search);
         layoutManager = new LinearLayoutManager(getApplicationContext());
         addTask = (FloatingActionButton) findViewById(R.id.imageButton);
 
@@ -324,7 +329,7 @@ public class ProfileActivity extends AppCompatActivity
             Intent shareIntent = new Intent();
             shareIntent.setAction(Intent.ACTION_SEND);
             shareIntent.setType("text/plain");
-            shareIntent.putExtra(Intent.EXTRA_TEXT, " " + " \nHelp you manage your medications " +
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "Medication Manager " + " \nHelp you manage your medications " +
                     "\nhttps://github.com/gconnect/MedicationManager");
             startActivity(Intent.createChooser(shareIntent, " Medication Manager"
             ));

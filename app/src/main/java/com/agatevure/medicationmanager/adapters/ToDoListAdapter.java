@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,6 +40,7 @@ public class ToDoListAdapter extends RecyclerView.Adapter<ToDoListAdapter.ToDoLi
     List<ToDoData> ToDoDataArrayList = new ArrayList<ToDoData>();
     Context context;
 
+
     public ToDoListAdapter(String details) {
         ToDoData toDoData = new ToDoData();
         toDoData.setToDoTaskDetails(details);
@@ -55,6 +57,7 @@ public class ToDoListAdapter extends RecyclerView.Adapter<ToDoListAdapter.ToDoLi
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_cardlayout, parent, false);
         ToDoListViewHolder toDoListViewHolder = new ToDoListViewHolder(view, context);
         return toDoListViewHolder;
+
     }
 
     @Override
@@ -255,6 +258,7 @@ public class ToDoListAdapter extends RecyclerView.Adapter<ToDoListAdapter.ToDoLi
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    // Locate the EditText in listview_main.xml
                 }
             });
         }

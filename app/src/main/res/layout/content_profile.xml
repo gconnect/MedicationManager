@@ -8,6 +8,16 @@
     tools:context="com.agatevure.medicationmanager.ProfileActivity"
     tools:showIn="@layout/app_bar_profile">
 
+    <SearchView
+        android:id="@+id/search"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="Search medication"
+        android:iconifiedByDefault="false">
+
+        <requestFocus />
+    </SearchView>
+
     <include layout="@layout/activity_main" />
 
 </android.support.constraint.ConstraintLayout>
