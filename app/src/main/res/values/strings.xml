@@ -99,7 +99,7 @@
     <string name="no_text"> </string>
     <string name="sign_up_button">SIGN UP</string>
     <string name="log_in">Already registered? Login</string>
-    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="title_activity_profile">List of Medications</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_about">About</string>

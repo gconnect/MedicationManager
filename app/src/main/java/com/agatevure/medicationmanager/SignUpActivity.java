@@ -25,8 +25,8 @@ public class SignUpActivity extends AppCompatActivity {
 
     private TextView signUpText;
 
-    private TextView loginError;
-
+    private TextView signupError;
+    private TextView login;
     private FirebaseAuth mAuth;
     private Button btnReset;
 
@@ -47,10 +47,21 @@ public class SignUpActivity extends AppCompatActivity {
         mAuth = ((FirebaseApplication)getApplication()).getFirebaseAuth();
         ((FirebaseApplication)getApplication()).checkUserLogin(SignUpActivity.this);
 
-        loginError = (TextView)findViewById(R.id.login_error);
+        signupError = (TextView)findViewById(R.id.signup_error);
 
         emailInput = (EditText)findViewById(R.id.email);
         passwordInput = (EditText)findViewById(R.id.password);
+
+
+        login = (TextView)findViewById(R.id.login);
+
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+            }
+        });
 
         signUpText = (TextView)findViewById(R.id.register);
         signUpText.setOnClickListener(new View.OnClickListener() {
@@ -69,8 +80,8 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
-        final Button loginButton = (Button)findViewById(R.id.register);
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        final Button signupButton = (Button)findViewById(R.id.register);
+        signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String enteredEmail = emailInput.getText().toString();
@@ -78,14 +89,14 @@ public class SignUpActivity extends AppCompatActivity {
 
                 if(TextUtils.isEmpty(enteredEmail) || TextUtils.isEmpty(enteredPassword)){
                     Helper.displayMessageToast(SignUpActivity.this, "Login fields must be filled");
-                    return;
+//                    return;
                 }
                 if(!Helper.isValidEmail(enteredEmail)){
                    Helper.displayMessageToast(SignUpActivity.this, "Invalidate email entered");
-                    return;
+//                    return;
                 }
 
-                ((FirebaseApplication)getApplication()).createNewUser(SignUpActivity.this, enteredEmail, enteredPassword, loginError);
+                ((FirebaseApplication)getApplication()).createNewUser(SignUpActivity.this, enteredEmail, enteredPassword, signupError);
             }
         });
     }

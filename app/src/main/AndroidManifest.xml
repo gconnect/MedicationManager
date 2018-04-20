@@ -47,7 +47,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".EditProfileActivity2" />
         <activity android:name=".ResetPasswordActivity" />
-        <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".AboutActivity" />
     </application>
 
 </manifest>

@@ -3,7 +3,6 @@ package com.agatevure.medicationmanager.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.agatevure.medicationmanager.SignUpActivity;

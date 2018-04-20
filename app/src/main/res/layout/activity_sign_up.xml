@@ -17,7 +17,7 @@
 
 
     <TextView
-        android:id="@+id/login_error"
+        android:id="@+id/signup_error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -38,7 +38,7 @@
         android:padding="@dimen/_12sdp"
 
         android:textColor="@color/colorBlack"
-        android:layout_below="@+id/login_error"
+        android:layout_below="@+id/signup_error"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/_8sdp"
         android:singleLine="true" />
